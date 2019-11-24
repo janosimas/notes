@@ -1,0 +1,9 @@
+-std=c++17
+-Weverything
+-Wno-unused-macros
+-Wno-c++-compat
+-Wno-c++98-compat
+-Wno-missing-prototypes
+-Wno-return-std-move-in-c++11
+-I"C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/VC/Tools/MSVC/14.22.27905/include/"
+-I"C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/VC/Tools/MSVC/14.22.27905/atlmfc/include/"
