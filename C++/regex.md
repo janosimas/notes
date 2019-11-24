@@ -5,24 +5,24 @@
 
 ## Variable name
 
-```
+```regexp
 ([a-zA-Z]\w*)
 ```
 
 ## Indentation
 
-```
+```regexp
 (^[^\S\r\n]*)
 ```
 
 ## Variable or raw string
 
-```
+```regexp
 ([a-zA-Z]\w*|"\w*")
 ```
 
 ## Anything except line break
 
-```
+```regexp
 ([^\n]*)
 ```
