@@ -1,6 +1,9 @@
 # VSCODE - C++
 
 ## General
+
+1. [Regex](regex.md) tipes for refactoring code
+
 ### Microsoft C++ tools
 
 1. [Microsoft C++ extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
