@@ -1,4 +1,13 @@
-# VSCODE - C++
+# C++
+
+  * [General](#general)
+  * [VSCode](#vscode)
+    + [Microsoft C++ tools](#microsoft-c-tools)
+    + [Clangd](#clangd)
+    + [Prototyping/test setup](#prototypingtest-setup)
+  * [Ubuntu](#ubuntu)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 ## General
 
