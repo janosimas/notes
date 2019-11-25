@@ -42,9 +42,10 @@
         - Has to be updated with the system installation of MSVC
 
 ### Prototyping/test setup
+  - [tasks.json](vscode/tasks.json)
+    - Build the current file to a binary same name in the folder **out/**.
   - [launch.json](vscode/launch.json)
     - Debug the binary with the same name as the current file in the folder **out/**.
-    - TODO: should be used with the tasks file
 
 ## Ubuntu
   1. When using a newer version of clang:
