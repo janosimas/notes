@@ -66,5 +66,10 @@
     "C_Cpp.autocomplete": "Disabled",
     "C_Cpp.formatting": "Disabled",
     "C_Cpp.errorSquiggles": "Disabled",
-    "C_Cpp.intelliSenseEngine": "Disabled"
+    "C_Cpp.intelliSenseEngine": "Disabled",
+    "clangd.arguments": [
+        "-clang-tidy-checks=-*,bugprone-*,cert-*, clang-*,cppcoreguidelines-*,llvm-*,misc-*,modernize-*,performance-*,readability-*,-modernize-use-trailing-return-type",
+        "--suggest-missing-includes",
+        "--header-insertion=iwyu"
+    ],
 }
