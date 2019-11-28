@@ -1,6 +1,7 @@
 # C++
   * [Refactoring](#refactoring)
   * [Text editor (VSCode)](#text-editor-vscode)
+  * [CppCheck](#cppcheck)
   * [Clang tidy](#clang-tidy)
     + [Clang-tidy-diff](#clang-tidy-diff)
   * [Clang format](#clang-format)
@@ -10,10 +11,16 @@
 ## Refactoring
   Some tips for using regular expressions for refactoring can be found in [regex.md](regex.md).
 
-  Also, take a look in the usage of [Clang tidy](#clang-tidy) and [VSCode](#text-editor) with the `clangd` extension.
+  Also, take a look in the usage of [CppCheck](#cppcheck), [Clang tidy](#clang-tidy),  [Clang format](#clang-format) and [VSCode](#text-editor) with the `clangd` extension.
 
 ## Text editor (VSCode)
   [VSCode](vscode/vscode.md) setup for C++
+
+## CppCheck
+
+  The [Cppcheck](http://cppcheck.sourceforge.net/) is a static analysis tool the get many of the most common bugs like usage of an uninitialized variable. It has a `GUI` and can be integrated with most editors and `IDE` with extensions.
+
+  Does not depend on your build system.
 
 ## Clang tidy
 
