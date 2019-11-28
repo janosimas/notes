@@ -52,9 +52,11 @@
 
 <details>
 <summary> Clangd setup </summary>
+
   1. You need [Clang (9+)](http://releases.llvm.org/download.html) installed and available in your path.
 
   2. Add the settings  to disable the conflicts with MS extension:
+
  ```json
   "C_Cpp.autocomplete": "Disabled",
   "C_Cpp.formatting": "Disabled",
