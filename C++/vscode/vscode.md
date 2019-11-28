@@ -32,14 +32,14 @@
 
 ## C++
 
-  - [C/C++ (Microsoft)](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+### [C/C++ (Microsoft)](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 
   The **Microsoft** extension is the minimum one need to use C++.
   It works fairly well but you'll need some work to set it up properly for anything more than a "folder project".
 
   In **Windows** you may also need to configure the compiler path for different architectures.
 
-  - [Clangd (LLVM)](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd)
+### [Clangd (LLVM)](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd)
 
   The official **LLVM** extension for **clangd** provides alternatives and extra tools for the Microsoft one.
 
@@ -72,7 +72,7 @@
   3. [Optional] When using manual configuration, create a file with the compilation flags: [compile_flags.txt](compile_flags.txt)
 </details>
 
-  - [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
+### [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
 
   Simple extension for building and executing a single file. Works with a lot of languages out of the box, with C++ you may need to tweak a little the command.
 </details>
@@ -94,25 +94,25 @@
 
 ## Git
 
-  - [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+### [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
 
   Git super powers. Has more features than most git gui. In line blame, line history, search, you name it. More options than you can manage but don't worry, it works very well with the defaults.
 
-  - [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
+### [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
 
   The usual visualizer for the git branches. It's quite usefull for an overview of the git branches or for searching.
 
 ## Other
 
-  - [Doxygen Documentation Generator](https://marketplace.visualstudio.com/items?itemName=cschlosser.doxdocgen)
+### [Doxygen Documentation Generator](https://marketplace.visualstudio.com/items?itemName=cschlosser.doxdocgen)
 
   Auto generates skeleton documentation with arguments for functions and templates.
 
-  - [Auto Comment Blocks](https://marketplace.visualstudio.com/items?itemName=kevinkyang.auto-comment-blocks)
+### [Auto Comment Blocks](https://marketplace.visualstudio.com/items?itemName=kevinkyang.auto-comment-blocks)
 
   Minor improvement for writing documentation blocks, will auto insert '*' when you break a line.
 
-  - [Better Readability](https://marketplace.visualstudio.com/items?itemName=pinage404.better-readability-extension-pack)
+### [Better Readability](https://marketplace.visualstudio.com/items?itemName=pinage404.better-readability-extension-pack)
 
   Pack of extensions to improve readabillity. Will help bracket matching, colorize the indentation and mark text gremlins for example.
 
