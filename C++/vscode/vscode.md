@@ -38,6 +38,26 @@
       - Easy for the simple case
       - Complex with a lot of files for anything else
 
+<details>
+<summary> Clangd setup </summary>
+  1. You need [Clang (9+)](http://releases.llvm.org/download.html) installed and available in your path.
+
+  2. Add the settings  to disable the conflicts with MS extension:
+ ```json
+  "C_Cpp.autocomplete": "Disabled",
+  "C_Cpp.formatting": "Disabled",
+  "C_Cpp.errorSquiggles": "Disabled",
+  "C_Cpp.intelliSenseEngine": "Disabled",
+  "clangd.arguments": [
+    "-clang-tidy-checks=-*,bugprone-*,cert-*, clang-*,cppcoreguidelines-*,llvm-*,misc-*,modernize-*,performance-*,readability-*,-modernize-use-trailing-return-type",
+    "--suggest-missing-includes",
+    "--header-insertion=iwyu"
+  ],
+```
+
+  3. [Optional] When using manual configuration, create a file with the compilation flags: [compile_flags.txt](compile_flags.txt)
+</details>
+
   - [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
 
   Simple extension for building and executing a single file. Works with a lot of languages out of the box, with C++ you may need to tweak a little the command.
@@ -53,7 +73,7 @@
 <details>
 <summary> Project management </summary>
 
-  - [CMake](https://marketplace.visualstudio.com/items?itemName=twxs.cmake)
+  - [CMake](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools)
 
   The **CMake** extension is very mature and full featured. Automatic recognizes *CMakeList* files and configure the project.
 
@@ -91,4 +111,148 @@
   Pack of extensions to improve readabillity. Will help bracket matching, colorize the indentation and mark text gremlins for example.
 
 </details>
+</details>
+
+<details>
+<summary> Prototyping </summary>
+
+  These tasks allow you to build the current file with the desired compiler, add them as needed to your *tasks.json*.
+
+  - MSVC C++03
+```json
+{
+    "label": "MSVC C++03",
+    "type": "shell",
+    "command": "cl.exe",
+    "args": [
+        "/EHsc",
+        "/FC",
+        "/Od",
+        "/permissive-",
+        "/W4",
+        "/Z7",
+        "/Fdout/${fileBasenameNoExtension}.pdb",
+        "/Feout/${fileBasenameNoExtension}.exe",
+        "/Foout/${fileBasenameNoExtension}.obj",
+        "${fileBasename}",
+    ],
+    "group": "build",
+    "presentation": {
+        "reveal":"always"
+    },
+    "problemMatcher": "$msCompile"
+}
+```
+  - MSVC C++17
+```json
+{
+    "label": "MSVC C++17",
+    "type": "shell",
+    "command": "cl.exe",
+    "args": [
+        "/EHsc",
+        "/FC",
+        "/Od",
+        "/permissive-",
+        "/std:c++17",
+        "/W4",
+        "/Z7",
+        "/Fdout/${fileBasenameNoExtension}.pdb",
+        "/Feout/${fileBasenameNoExtension}.exe",
+        "/Foout/${fileBasenameNoExtension}.obj",
+        "${fileBasename}"
+    ],
+    "group": "build",
+    "presentation": {
+        "reveal":"always"
+    },
+    "problemMatcher": "$msCompile"
+}
+```
+  - Clang C++17
+```json
+{
+    "label": "Clang C++17",
+    "type": "shell",
+    "command": "clang-cl.exe",
+    "args": [
+        "-m32",
+        "/EHsc",
+        "/FC",
+        "/Od",
+        "/permissive-",
+        "/std:c++17",
+        "/W4",
+        "/Z7",
+        "/Fdout/${fileBasenameNoExtension}.pdb",
+        "/Foout/",
+        "/Feout/${fileBasenameNoExtension}.exe",
+        "${fileBasename}"
+    ],
+    "group": "build",
+    "presentation": {
+        "reveal":"always"
+    },
+    "problemMatcher": "$msCompile"
+}
+```
+  - Clang C++03
+```json
+{
+    "label": "Clang C++03",
+    "type": "shell",
+    "command": "clang-cl.exe",
+    "args": [
+        "-m32",
+        "/EHsc",
+        "/FC",
+        "/Od",
+        "/permissive-",
+        "/W4",
+        "/Z7",
+        "/Fdout/${fileBasenameNoExtension}.pdb",
+        "/Foout/",
+        "/Feout/${fileBasenameNoExtension}.exe",
+        "${fileBasename}",
+    ],
+    "group": "build",
+    "presentation": {
+        "reveal":"always"
+    },
+    "problemMatcher": "$msCompile"
+}
+```
+</details>
+
+<details>
+<summary> Building projects </summary>
+
+  Using the [CMake](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools) extension it will setup the building enviroment for you.
+
+  MSBuild is a different thing, you may have to do some tweaking when building bigger projects but here is the basics:
+
+```json
+{
+    "label": "MSBuild",
+    "command": "msbuild",
+    "type": "process",
+    "args": [
+        "/m",
+        "/property:GenerateFullPaths=true",
+        "/p:Configuration=Debug;Platform=Win32"
+    ],
+    "group": "build",
+    "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+    },
+    "problemMatcher": [
+        "$msCompile"
+    ]
+}
+```
 </details>
