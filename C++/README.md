@@ -4,6 +4,7 @@
   * [Clang tidy](#clang-tidy)
     + [Clang-tidy-diff](#clang-tidy-diff)
   * [Clang format](#clang-format)
+    + [Clang-format-diff](#clang-format-diff)
   * [Ubuntu](#ubuntu)
 
 ## Refactoring
