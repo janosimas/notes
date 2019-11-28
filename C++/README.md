@@ -3,6 +3,7 @@
   * [Text editor (VSCode)](#text-editor-vscode)
   * [Clang tidy](#clang-tidy)
     + [Clang-tidy-diff](#clang-tidy-diff)
+  * [Clang format](#clang-format)
   * [Ubuntu](#ubuntu)
 
 ## Refactoring
@@ -20,7 +21,7 @@
   -checks=-*,bugprone-*,cert-*, clang-*,cppcoreguidelines-*,llvm-*,misc-*,modernize-*,performance-*,readability-*,-modernize-use-trailing-return-type
   ```
 
-### Clang-tidy-diff
+### Clang tidy diff
   The [clang-tidy-diff.py](clang-tidy-diff.py) allow `clang-tidy` to be applied only to modified files and lines. This allows a team to use `clang-tidy` in large codebases and still only get meaningfull errors for the newly modified code.
 
    Sample command:
@@ -29,6 +30,22 @@ git diff -U0 HEAD^ | clang-tidy-diff.py -strip 1 -- -checks=-*,modernize-use-ove
 ```
 
   The `clang-tidy-diff.py` is a modified version of the official script that fix a few issues. This version allows one to pass arguments directly to `clang-tidy` using the '`--`' flag.
+
+## Clang format
+
+  The `clang-format` tool is a higly configurable tool for formatting `C++` code. It's very stable and will (probably) not break your code if it was not already broken.
+
+  A configuration file can be generated with a preview in [clang-format-configurator](https://zed0.co.uk/clang-format-configurator/).
+
+  `Visual Studio` suports `clang-format` by default.
+
+### Clang format diff
+
+  This script allow `clang-format` to be applied only in the modified area of the code. This allows a team to use `clang-format` in large codebases and still only commit formatted code.
+
+```bash
+git diff -U0 --no-color HEAD^ | clang-format-diff.py -p1 -i
+```
 
 ## Ubuntu
   1. To use newer versions of `clang` you have to update your environment with all the tools and binary names, the script: [clang_update_alternativs.sh](clang_update_alternativs.sh) updates the system to the desired version. **Update the script with the desired version**.
