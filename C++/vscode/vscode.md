@@ -63,13 +63,40 @@
   "C_Cpp.errorSquiggles": "Disabled",
   "C_Cpp.intelliSenseEngine": "Disabled",
   "clangd.arguments": [
-    "-clang-tidy-checks=-*,bugprone-*,cert-*, clang-*,cppcoreguidelines-*,llvm-*,misc-*,modernize-*,performance-*,readability-*,-modernize-use-trailing-return-type",
+    "-clang-tidy-checks=-*,modernize-use-override",
     "--suggest-missing-includes",
     "--header-insertion=iwyu"
   ],
 ```
 
   3. [Optional] When using manual configuration, create a file with the compilation flags: [compile_flags.txt](compile_flags.txt)
+</details>
+
+### [Flylint](https://marketplace.visualstudio.com/items?itemName=jbenden.c-cpp-flylint)
+
+  Flylint (C/C++ Advanced Lint) is an extension that integrates other tools in your `VSCode` to provide code analysis.
+
+  It can be integrated with `clang` and `cppcheck` with minimum effort.
+
+  The `clang` option should be disabled if your are using other `clang-based  extension like `clangd`
+
+<details>
+<summary> Sample configuration </summary>
+
+```json
+"c-cpp-flylint.cppcheck.executable": "C:\\Program Files\\Cppcheck\\cppcheck.exe",
+"c-cpp-flylint.flexelint.enable": false,
+"c-cpp-flylint.clang.enable": true,
+"c-cpp-flylint.clang.extraArgs": [
+    "-Weverything",
+    "-std=c++17",
+    "-Wno-unused-macros",
+    "-Wno-c++-compat"
+],
+"c-cpp-flylint.clang.includePaths": [
+    "C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/VC/Tools/MSVC/14.22.27905/include",
+],
+```
 </details>
 
 ### [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
