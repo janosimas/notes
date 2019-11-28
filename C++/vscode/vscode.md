@@ -79,16 +79,17 @@
 
 ## Debug
 
-  - [C++ Set next statement](https://marketplace.visualstudio.com/items?itemName=ntoskrnl7.cxx-set-next-statement-extension)
-    - Debug super powers: Can jump the debbuger to a different line.
+### [C++ Set next statement](https://marketplace.visualstudio.com/items?itemName=ntoskrnl7.cxx-set-next-statement-extension)
+
+  Debug super powers: Can jump the debbuger to a different line.
 
 ## Project management
 
-  - [CMake](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools)
+### [CMake](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools)
 
   The **CMake** extension is very mature and full featured. Automatic recognizes *CMakeList* files and configure the project.
 
-  - [Solution explorer](https://marketplace.visualstudio.com/items?itemName=fernandoescolar.vscode-solution-explorer)
+### [Solution explorer](https://marketplace.visualstudio.com/items?itemName=fernandoescolar.vscode-solution-explorer)
 
   This unofficial extension has minimal features, you can open a project and navigate but not much more. One can create a file but filters do not work very well, it works better with folders. **No compilation.**
 
