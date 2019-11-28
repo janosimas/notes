@@ -1,7 +1,23 @@
 # VSCode for C++ prototyping
 
-<details>
-<summary> Installation </summary>
+- [Installation](#installation)
+- [Extensions](#extensions)
+  * [C++](#c--)
+  * [Debug](#debug)
+  * [Project management](#project-management)
+  * [Git](#git)
+  * [Other](#other)
+- [Prototyping](#prototyping)
+  * [Building](#building)
+    + [MSVC C++17](#msvc-c--17)
+    + [MSVC C++03](#msvc-c--03)
+    + [Clang C++17](#clang-c--17)
+    + [Clang C++03](#clang-c--03)
+  * [Executing and debug](#executing-and-debug)
+- [Building projects](#building-projects)
+
+
+# Installation
 
   [**VSCode**](https://code.visualstudio.com/download) can be installed in 3 different ways: in the user folder (recomended by **Microsoft**), system wide or [portable](https://code.visualstudio.com/docs/editor/portable).
 
@@ -12,13 +28,9 @@
 
   Too many extensions can lag your **VSCode** and are very hard to manage.
 
-</details>
+# Extensions
 
-<details>
-<summary> Extensions </summary>
-
-<details>
-<summary> C++ </summary>
+## C++
 
   - [C/C++ (Microsoft)](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 
@@ -63,15 +75,12 @@
   Simple extension for building and executing a single file. Works with a lot of languages out of the box, with C++ you may need to tweak a little the command.
 </details>
 
-<details>
-<summary> Debug </summary>
+## Debug
 
   - [C++ Set next statement](https://marketplace.visualstudio.com/items?itemName=ntoskrnl7.cxx-set-next-statement-extension)
     - Debug super powers: Can jump the debbuger to a different line.
-</details>
 
-<details>
-<summary> Project management </summary>
+## Project management
 
   - [CMake](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools)
 
@@ -80,10 +89,8 @@
   - [Solution explorer](https://marketplace.visualstudio.com/items?itemName=fernandoescolar.vscode-solution-explorer)
 
   This unofficial extension has minimal features, you can open a project and navigate but not much more. One can create a file but filters do not work very well, it works better with folders. **No compilation.**
-</details>
 
-<details>
-<summary> Git </summary>
+## Git
 
   - [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
 
@@ -93,10 +100,7 @@
 
   The usual visualizer for the git branches. It's quite usefull for an overview of the git branches or for searching.
 
-</details>
-
-<details>
-<summary> Other </summary>
+## Other
 
   - [Doxygen Documentation Generator](https://marketplace.visualstudio.com/items?itemName=cschlosser.doxdocgen)
 
@@ -110,40 +114,21 @@
 
   Pack of extensions to improve readabillity. Will help bracket matching, colorize the indentation and mark text gremlins for example.
 
-</details>
-</details>
+# Prototyping
 
-<details>
-<summary> Prototyping </summary>
+- [Building](#building)
+  * [MSVC C++17](#msvc-c17)
+  * [MSVC C++03](#msvc-c03)
+  * [Clang C++17](#clang-c17)
+  * [Clang C++03](#clang-c03)
+- [Executing and debug](#executing-and-debug)
 
-  These tasks allow you to build the current file with the desired compiler, add them as needed to your *tasks.json*.
+## Building
+  These tasks allow you to build the current file with the desired compiler, add them as needed to your *tasks.json*. The binary will be create in the `out/` folder.
 
-  - MSVC C++03
-```json
-{
-    "label": "MSVC C++03",
-    "type": "shell",
-    "command": "cl.exe",
-    "args": [
-        "/EHsc",
-        "/FC",
-        "/Od",
-        "/permissive-",
-        "/W4",
-        "/Z7",
-        "/Fdout/${fileBasenameNoExtension}.pdb",
-        "/Feout/${fileBasenameNoExtension}.exe",
-        "/Foout/${fileBasenameNoExtension}.obj",
-        "${fileBasename}",
-    ],
-    "group": "build",
-    "presentation": {
-        "reveal":"always"
-    },
-    "problemMatcher": "$msCompile"
-}
-```
-  - MSVC C++17
+  Keybinding to build the current file: `ctrl+f7`
+
+### MSVC C++17
 ```json
 {
     "label": "MSVC C++17",
@@ -169,7 +154,34 @@
     "problemMatcher": "$msCompile"
 }
 ```
-  - Clang C++17
+
+### MSVC C++03
+```json
+{
+    "label": "MSVC C++03",
+    "type": "shell",
+    "command": "cl.exe",
+    "args": [
+        "/EHsc",
+        "/FC",
+        "/Od",
+        "/permissive-",
+        "/W4",
+        "/Z7",
+        "/Fdout/${fileBasenameNoExtension}.pdb",
+        "/Feout/${fileBasenameNoExtension}.exe",
+        "/Foout/${fileBasenameNoExtension}.obj",
+        "${fileBasename}",
+    ],
+    "group": "build",
+    "presentation": {
+        "reveal":"always"
+    },
+    "problemMatcher": "$msCompile"
+}
+```
+
+### Clang C++17
 ```json
 {
     "label": "Clang C++17",
@@ -196,7 +208,8 @@
     "problemMatcher": "$msCompile"
 }
 ```
-  - Clang C++03
+
+### Clang C++03
 ```json
 {
     "label": "Clang C++03",
@@ -222,10 +235,26 @@
     "problemMatcher": "$msCompile"
 }
 ```
-</details>
 
-<details>
-<summary> Building projects </summary>
+## Executing and debug
+
+This task should be added to your *launch.json* and will allow you to execut and debug a file build with any of the tasks in the last item.
+
+```json
+{
+    "name": "Debug current file",
+    "type": "cppvsdbg",
+    "request": "launch",
+    "program": "${workspaceFolder}/out/${fileBasenameNoExtension}.exe",
+    "args": [],
+    "stopAtEntry": true,
+    "cwd": "${workspaceFolder}/out",
+    "environment": [],
+    "externalConsole": true
+}
+```
+
+# Building projects
 
   Using the [CMake](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools) extension it will setup the building enviroment for you.
 
@@ -255,4 +284,3 @@
     ]
 }
 ```
-</details>
