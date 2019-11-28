@@ -1,9 +1,16 @@
+-fno-limit-debug-info
+-fsanitize-address-use-after-scope
+-fsanitize=address
 -std=c++17
+-Wall
 -Weverything
--Wno-unused-macros
+-Wextra
 -Wno-c++-compat
 -Wno-c++98-compat
 -Wno-missing-prototypes
 -Wno-return-std-move-in-c++11
+-Wno-unused-macros
+-Wpedantic
+-Wshadow-all
 -I"C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/VC/Tools/MSVC/14.22.27905/include/"
 -I"C:/Program Files (x86)/Microsoft Visual Studio/2019/Professional/VC/Tools/MSVC/14.22.27905/atlmfc/include/"

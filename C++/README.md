@@ -1,14 +1,27 @@
 # C++
+  * [Refactoring](#refactoring)
+  * [Text editor (VSCode)](#text-editor-vscode)
+  * [Clang tidy](#clang-tidy)
+    + [Clang-tidy-diff](#clang-tidy-diff)
+  * [Ubuntu](#ubuntu)
 
-## General
+## Refactoring
+  Some tips for using regular expressions for refactoring can be found in [regex.md](regex.md).
 
-1. [Regex](regex.md) tips for refactoring code
+  Also, take a look in the usage of [Clang tidy](#clang-tidy) and [VSCode](#text-editor) with the `clangd` extension.
 
-2. [VSCode](vscode/vscode.md) setup for C++
+## Text editor (VSCode)
+  [VSCode](vscode/vscode.md) setup for C++
 
-3. [Clang tidy diff](clang-tidy-diff.py)
+## Clang tidy
 
-  This script allow `clang-tidy` to be applied only to modified files and lines. This allows a team to use `clang-tidy` in large codebases and still only get meaningfull errors for the newly modified code.
+  `Clang-tidy` is tool in the `clang` suite for checking the code. It checks static issues, bug-prone styles and patterns. There are thousands of possible check, start with this sugested list of checks and modify as needed.
+  ```
+  -checks=-*,bugprone-*,cert-*, clang-*,cppcoreguidelines-*,llvm-*,misc-*,modernize-*,performance-*,readability-*,-modernize-use-trailing-return-type
+  ```
+
+### Clang-tidy-diff
+  The [clang-tidy-diff.py](clang-tidy-diff.py) allow `clang-tidy` to be applied only to modified files and lines. This allows a team to use `clang-tidy` in large codebases and still only get meaningfull errors for the newly modified code.
 
    Sample command:
 ```bash
