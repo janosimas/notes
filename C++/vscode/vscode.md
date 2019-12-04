@@ -156,7 +156,7 @@
 ## Building
   These tasks allow you to build the current file with the desired compiler, add them as needed to your *tasks.json*. The binary will be create in the `out/` folder.
 
-  Keybinding to build the current file: `ctrl+f7`
+Keybinding to build the current file: `ctrl+shift+b`
 
 ### MSVC C++17
 ```json
