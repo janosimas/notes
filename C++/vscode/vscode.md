@@ -154,9 +154,12 @@
 - [Executing and debug](#executing-and-debug)
 
 ## Building
-  These tasks allow you to build the current file with the desired compiler, add them as needed to your *tasks.json*. The binary will be create in the `build/` folder.
+  These tasks allow you to build the current file with the desired compiler.
 
-  The create output folder task is called automatically:
+  To use these tasks you need to alter the `tasks.json`, if you don't have one it can be created with the `Configure task` command in `VSCode`.
+  Add them as needed to your `tasks.json` in the `"tasks":[...]` entry. The binaries will be create in the `build/` folder.
+
+  The `create-build-folder` task is required by the other tasks and is called automatically:
 ```json
 {
     "label": "create-build-folder",
