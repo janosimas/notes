@@ -154,16 +154,16 @@
 - [Executing and debug](#executing-and-debug)
 
 ## Building
-  These tasks allow you to build the current file with the desired compiler, add them as needed to your *tasks.json*. The binary will be create in the `out/` folder.
+  These tasks allow you to build the current file with the desired compiler, add them as needed to your *tasks.json*. The binary will be create in the `build/` folder.
 
   The create output folder task is called automatically:
 ```json
 {
-    "label": "create-out-folder",
+    "label": "create-build-folder",
     "type": "process",
     "command": "cmd",
     "args": [
-        "/C mkdir out\\ | echo "
+        "/C mkdir build\\ | echo "
     ],
     "presentation": {
         "reveal":"never",
@@ -187,9 +187,9 @@ Keybinding to build the current file: `ctrl+shift+b`
         "/std:c++17",
         "/W4",
         "/Z7",
-        "/Fdout/${fileBasenameNoExtension}.pdb",
-        "/Feout/${fileBasenameNoExtension}.exe",
-        "/Foout/${fileBasenameNoExtension}.obj",
+        "/Fdbuild/${fileBasenameNoExtension}.pdb",
+        "/Febuild/${fileBasenameNoExtension}.exe",
+        "/Fobuild/${fileBasenameNoExtension}.obj",
         "${file}"
     ],
     "group": "build",
@@ -198,7 +198,7 @@ Keybinding to build the current file: `ctrl+shift+b`
     },
     "problemMatcher": "$msCompile",
     "dependsOrder": "sequence",
-    "dependsOn":["create-out-folder"]
+    "dependsOn":["create-build-folder"]
 }
 ```
 
@@ -215,9 +215,9 @@ Keybinding to build the current file: `ctrl+shift+b`
         "/permissive-",
         "/W4",
         "/Z7",
-        "/Fdout/${fileBasenameNoExtension}.pdb",
-        "/Feout/${fileBasenameNoExtension}.exe",
-        "/Foout/${fileBasenameNoExtension}.obj",
+        "/Fdbuild/${fileBasenameNoExtension}.pdb",
+        "/Febuild/${fileBasenameNoExtension}.exe",
+        "/Fobuild/${fileBasenameNoExtension}.obj",
         "${file}"
     ],
     "group": "build",
@@ -226,7 +226,7 @@ Keybinding to build the current file: `ctrl+shift+b`
     },
     "problemMatcher": "$msCompile",
     "dependsOrder": "sequence",
-    "dependsOn":["create-out-folder"]
+    "dependsOn":["create-build-folder"]
 }
 ```
 
@@ -245,9 +245,9 @@ Keybinding to build the current file: `ctrl+shift+b`
         "/std:c++17",
         "/W4",
         "/Z7",
-        "/Fdout/${fileBasenameNoExtension}.pdb",
-        "/Foout/",
-        "/Feout/${fileBasenameNoExtension}.exe",
+        "/Fdbuild/${fileBasenameNoExtension}.pdb",
+        "/Fobuild/",
+        "/Febuild/${fileBasenameNoExtension}.exe",
         "${file}"
     ],
     "group": "build",
@@ -256,7 +256,7 @@ Keybinding to build the current file: `ctrl+shift+b`
     },
     "problemMatcher": "$msCompile",
     "dependsOrder": "sequence",
-    "dependsOn":["create-out-folder"]
+    "dependsOn":["create-build-folder"]
 }
 ```
 
@@ -274,9 +274,9 @@ Keybinding to build the current file: `ctrl+shift+b`
         "/permissive-",
         "/W4",
         "/Z7",
-        "/Fdout/${fileBasenameNoExtension}.pdb",
-        "/Foout/",
-        "/Feout/${fileBasenameNoExtension}.exe",
+        "/Fdbuild/${fileBasenameNoExtension}.pdb",
+        "/Fobuild/",
+        "/Febuild/${fileBasenameNoExtension}.exe",
         "${file}"
     ],
     "group": "build",
@@ -285,7 +285,7 @@ Keybinding to build the current file: `ctrl+shift+b`
     },
     "problemMatcher": "$msCompile",
     "dependsOrder": "sequence",
-    "dependsOn":["create-out-folder"]
+    "dependsOn":["create-build-folder"]
 }
 ```
 
@@ -298,10 +298,10 @@ This task should be added to your *launch.json* and will allow you to execut and
     "name": "Debug current file",
     "type": "cppvsdbg",
     "request": "launch",
-    "program": "${workspaceFolder}/out/${fileBasenameNoExtension}.exe",
+    "program": "${workspaceFolder}/build/${fileBasenameNoExtension}.exe",
     "args": [],
     "stopAtEntry": true,
-    "cwd": "${workspaceFolder}/out",
+    "cwd": "${workspaceFolder}/build",
     "environment": [],
     "externalConsole": true
 }
