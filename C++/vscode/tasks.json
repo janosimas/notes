@@ -1,0 +1,141 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+			"label": "create-build-folder",
+			"type": "process",
+			"command": "cmd",
+			"args": [
+				"/C mkdir build\\ | echo "
+			],
+			"presentation": {
+				"reveal":"never",
+				"echo": false
+			}
+		},
+		{
+			"label": "MSVC C++17",
+			"type": "shell",
+			"command": "cl.exe",
+			"args": [
+				"/EHsc",
+				"/FC",
+				"/Od",
+				"/permissive-",
+				"/std:c++17",
+				"/W4",
+				"/Z7",
+				"/Fdbuild/${fileBasenameNoExtension}.pdb",
+				"/Febuild/${fileBasenameNoExtension}.exe",
+				"/Fobuild/${fileBasenameNoExtension}.obj",
+				"${file}"
+			],
+			"group": "build",
+			"presentation": {
+				"reveal":"always"
+			},
+			"problemMatcher": "$msCompile",
+			"dependsOrder": "sequence",
+			"dependsOn":["create-build-folder"]
+		},
+		{
+			"label": "MSVC C++03",
+			"type": "shell",
+			"command": "cl.exe",
+			"args": [
+				"/EHsc",
+				"/FC",
+				"/Od",
+				"/permissive-",
+				"/W4",
+				"/Z7",
+				"/Fdbuild/${fileBasenameNoExtension}.pdb",
+				"/Febuild/${fileBasenameNoExtension}.exe",
+				"/Fobuild/${fileBasenameNoExtension}.obj",
+				"${file}"
+			],
+			"group": "build",
+			"presentation": {
+				"reveal":"always"
+			},
+			"problemMatcher": "$msCompile",
+			"dependsOrder": "sequence",
+			"dependsOn":["create-build-folder"]
+		},
+		{
+			"label": "Clang C++17",
+			"type": "shell",
+			"command": "clang-cl.exe",
+			"args": [
+				"-m32",
+				"/EHsc",
+				"/FC",
+				"/Od",
+				"/permissive-",
+				"/std:c++17",
+				"/W4",
+				"/Z7",
+				"/Fdbuild/${fileBasenameNoExtension}.pdb",
+				"/Fobuild/",
+				"/Febuild/${fileBasenameNoExtension}.exe",
+				"${file}"
+			],
+			"group": "build",
+			"presentation": {
+				"reveal":"always"
+			},
+			"problemMatcher": "$msCompile",
+			"dependsOrder": "sequence",
+			"dependsOn":["create-build-folder"]
+		},
+		{
+			"label": "Clang C++03",
+			"type": "shell",
+			"command": "clang-cl.exe",
+			"args": [
+				"-m32",
+				"/EHsc",
+				"/FC",
+				"/Od",
+				"/permissive-",
+				"/W4",
+				"/Z7",
+				"/Fdbuild/${fileBasenameNoExtension}.pdb",
+				"/Fobuild/",
+				"/Febuild/${fileBasenameNoExtension}.exe",
+				"${file}"
+			],
+			"group": "build",
+			"presentation": {
+				"reveal":"always"
+			},
+			"problemMatcher": "$msCompile",
+			"dependsOrder": "sequence",
+			"dependsOn":["create-build-folder"]
+		},
+		{
+			"label": "MSBuild",
+			"command": "msbuild",
+			"type": "process",
+			"args": [
+				"/m",
+				"/property:GenerateFullPaths=true",
+				"/p:Configuration=Debug;Platform=Win32"
+			],
+			"group": "build",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": true
+			},
+			"problemMatcher": [
+				"$msCompile"
+			]
+		}
+    ]
+}

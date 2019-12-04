@@ -156,8 +156,11 @@
 ## Building
   These tasks allow you to build the current file with the desired compiler.
 
-  To use these tasks you need to alter the `tasks.json`, if you don't have one it can be created with the `Configure task` command in `VSCode`.
-  Add them as needed to your `tasks.json` in the `"tasks":[...]` entry. The binaries will be create in the `build/` folder.
+  To use these tasks you need to alter the `tasks.json`, if you don't have one it can be created with the `Configure task` command in `VSCode` and add them as needed to your `tasks.json` in the `"tasks": [...]` entry.
+
+  Another option is to copy the sample file with all the tasks: [tasks.json](tasks.json)
+
+  The binaries will be create in the `build/` folder.
 
   The `create-build-folder` task is required by the other tasks and is called automatically:
 ```json
@@ -294,8 +297,9 @@ Keybinding to build the current file: `ctrl+shift+b`
 
 ## Executing and debug
 
-This task should be added to your *launch.json* and will allow you to execut and debug a file build with any of the tasks in the last item.
+This will allow you to execut and debug a file build with any of the tasks in the last item.
 
+As with the tasks, you'll need a `launch.json` so you can add the configuration to the `"configurations": [...]` entry or use the [launch.json](launch.json) sample configuration.
 ```json
 {
     "name": "Debug current file",
@@ -312,8 +316,10 @@ This task should be added to your *launch.json* and will allow you to execut and
 
 # Building projects
 
+## CMake
   Using the [CMake](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools) extension it will setup the building enviroment for you.
 
+## MSBuild
   MSBuild is a different thing, you may have to do some tweaking when building bigger projects but here is the basics:
 
 ```json
