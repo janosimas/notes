@@ -175,7 +175,7 @@
         "/Fdout/${fileBasenameNoExtension}.pdb",
         "/Feout/${fileBasenameNoExtension}.exe",
         "/Foout/${fileBasenameNoExtension}.obj",
-        "${fileBasename}"
+        "${file}"
     ],
     "group": "build",
     "presentation": {
@@ -201,7 +201,7 @@
         "/Fdout/${fileBasenameNoExtension}.pdb",
         "/Feout/${fileBasenameNoExtension}.exe",
         "/Foout/${fileBasenameNoExtension}.obj",
-        "${fileBasename}",
+        "${file}"
     ],
     "group": "build",
     "presentation": {
@@ -229,7 +229,7 @@
         "/Fdout/${fileBasenameNoExtension}.pdb",
         "/Foout/",
         "/Feout/${fileBasenameNoExtension}.exe",
-        "${fileBasename}"
+        "${file}"
     ],
     "group": "build",
     "presentation": {
@@ -256,7 +256,7 @@
         "/Fdout/${fileBasenameNoExtension}.pdb",
         "/Foout/",
         "/Feout/${fileBasenameNoExtension}.exe",
-        "${fileBasename}",
+        "${file}"
     ],
     "group": "build",
     "presentation": {
