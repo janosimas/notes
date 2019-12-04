@@ -1,6 +1,7 @@
 # VSCode for C++ prototyping
 
 - [Installation](#installation)
+- [Requirements](#requirements)
 - [Extensions](#extensions)
   * [C++](#c--)
   * [Debug](#debug)
@@ -28,6 +29,10 @@
 
   Too many extensions can lag your **VSCode** and are very hard to manage.
 
+# Requirements
+
+  The [MS C++](#c--) extension is a requirement for the proper usage. A lot of it's functionalities can be replaced by other extensions but I strongly recomend installing it.
+
 # Extensions
 
 ## C++
@@ -37,7 +42,9 @@
   The **Microsoft** extension is the minimum one need to use C++.
   It works fairly well but you'll need some work to set it up properly for anything more than a "folder project".
 
-  In **Windows** you may also need to configure the compiler path for different architectures.
+  You should create a configuration file with the `C\C++: Edit configurations` command. For more information about the configuration check the official [documentation](https://code.visualstudio.com/docs/cpp/config-msvc).
+
+  In **Windows** you may also need to configure the `CL` compiler path for different architectures.
 
 ### [Clangd (LLVM)](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd)
 
@@ -299,7 +306,9 @@ Keybinding to build the current file: `ctrl+shift+b`
 
 This will allow you to execut and debug a file build with any of the tasks in the last item.
 
-As with the tasks, you'll need a `launch.json` so you can add the configuration to the `"configurations": [...]` entry or use the [launch.json](launch.json) sample configuration.
+As with the tasks, you'll need a `launch.json`, you can generate a default one eith the command: `Debug: open launch.json`.
+
+Add the configuration to the `"configurations": [...]` entry or use the [launch.json](launch.json) sample configuration.
 ```json
 {
     "name": "Debug current file",
