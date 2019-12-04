@@ -156,6 +156,21 @@
 ## Building
   These tasks allow you to build the current file with the desired compiler, add them as needed to your *tasks.json*. The binary will be create in the `out/` folder.
 
+  The create output folder task is called automatically:
+```json
+{
+    "label": "create-out-folder",
+    "type": "process",
+    "command": "cmd",
+    "args": [
+        "/C mkdir out\\ | echo "
+    ],
+    "presentation": {
+        "reveal":"never",
+        "echo": false
+    }
+}
+```
 Keybinding to build the current file: `ctrl+shift+b`
 
 ### MSVC C++17
@@ -181,7 +196,9 @@ Keybinding to build the current file: `ctrl+shift+b`
     "presentation": {
         "reveal":"always"
     },
-    "problemMatcher": "$msCompile"
+    "problemMatcher": "$msCompile",
+    "dependsOrder": "sequence",
+    "dependsOn":["create-out-folder"]
 }
 ```
 
@@ -207,7 +224,9 @@ Keybinding to build the current file: `ctrl+shift+b`
     "presentation": {
         "reveal":"always"
     },
-    "problemMatcher": "$msCompile"
+    "problemMatcher": "$msCompile",
+    "dependsOrder": "sequence",
+    "dependsOn":["create-out-folder"]
 }
 ```
 
@@ -235,7 +254,9 @@ Keybinding to build the current file: `ctrl+shift+b`
     "presentation": {
         "reveal":"always"
     },
-    "problemMatcher": "$msCompile"
+    "problemMatcher": "$msCompile",
+    "dependsOrder": "sequence",
+    "dependsOn":["create-out-folder"]
 }
 ```
 
@@ -262,7 +283,9 @@ Keybinding to build the current file: `ctrl+shift+b`
     "presentation": {
         "reveal":"always"
     },
-    "problemMatcher": "$msCompile"
+    "problemMatcher": "$msCompile",
+    "dependsOrder": "sequence",
+    "dependsOn":["create-out-folder"]
 }
 ```
 
