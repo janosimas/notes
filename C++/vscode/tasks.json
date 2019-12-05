@@ -116,13 +116,35 @@
 			"dependsOn":["create-build-folder"]
 		},
 		{
-			"label": "MSBuild",
+			"label": "MS: Build",
 			"command": "msbuild",
 			"type": "process",
 			"args": [
 				"/m",
 				"/property:GenerateFullPaths=true",
 				"/p:Configuration=Debug;Platform=Win32"
+			],
+			"group": "build",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": true,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": true
+			},
+			"problemMatcher": [
+				"$msCompile"
+			]
+		},
+		{
+			"label": "MS: Clean",
+			"command": "msbuild",
+			"type": "process",
+			"args": [
+				"-t:Clean",
+				"/p:Configuration=Debug;Platform=Win32",
+				"/property:GenerateFullPaths=true"
 			],
 			"group": "build",
 			"presentation": {
