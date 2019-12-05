@@ -56,4 +56,4 @@ git diff -U0 --no-color HEAD^ | clang-format-diff.py -p1 -i
 ```
 
 ## Ubuntu
-  1. To use newer versions of `clang` you have to update your environment with all the tools and binary names, the script: [clang_update_alternativs.sh](clang_update_alternativs.sh) updates the system to the desired version. **Update the script with the desired version**.
+  1. To use newer versions of `clang` you have to update your environment with all the tools and binary names, the script: [clang_update_alternatives.sh](clang_update_alternatives.sh) updates the system to the desired version. **Update the script with the desired version**.
