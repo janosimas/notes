@@ -1,6 +1,6 @@
 # Regex capturing tips
 
-1. Notepad++ has a powerfull regex parser, better then VSCode.
+1. Notepad++ has a powerful regex parser, better then VSCode.
 2. VSCode and Notepad++ work in a different way for parenthesis in the substitution.
 
 ## Variable name

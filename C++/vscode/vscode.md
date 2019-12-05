@@ -20,18 +20,21 @@
 
 # Installation
 
-  [**VSCode**](https://code.visualstudio.com/download) can be installed in 3 different ways: in the user folder (recomended by **Microsoft**), system wide or [portable](https://code.visualstudio.com/docs/editor/portable).
+  [**VSCode**](https://code.visualstudio.com/download) can be installed in 3 different ways:
 
-  Each installation mode has it's advantages, if you have a very specific need and always uses **VSCode** for the same function, go with the user folder installation.
+  - User folder (recommended by **Microsoft**)
+  - System wide
+  - [Portable](https://code.visualstudio.com/docs/editor/portable).
 
-  In case you develop with more then one language or has other needs, like Docker or database management, go with portable installation.
-  The portable installation allows you to keep your extensions independent and avoid having too many extensions.
+  Each installation mode has its advantages. If you only have a specific need and uses **VSCode** for the same function, go with the user folder installation.
 
-  Too many extensions can lag your **VSCode** and are very hard to manage.
+  The portable installation is useful to organize your extensions. It's useful if you work with more languages.
+
+  Too many extensions can lag your **VSCode** and are hard to manage.
 
 # Requirements
 
-  The [MS C++](#c--) extension is a requirement for the proper usage. A lot of it's functionalities can be replaced by other extensions but I strongly recomend installing it.
+  The [MS C++](#c--) extension is a requirement for the proper usage. Some of its functionalities can be replaced by other extensions, I recommend installing it.
 
 # Extensions
 
@@ -40,7 +43,7 @@
 ### [C/C++ (Microsoft)](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
 
   The **Microsoft** extension is the minimum one need to use C++.
-  It works fairly well but you'll need some work to set it up properly for anything more than a "folder project".
+  It works well but you'll need to set it up for anything more than a "folder project".
 
   You should create a configuration file with the `C\C++: Edit configurations` command. For more information about the configuration check the official [documentation](https://code.visualstudio.com/docs/cpp/config-msvc).
 
@@ -50,10 +53,10 @@
 
   The official **LLVM** extension for **clangd** provides alternatives and extra tools for the Microsoft one.
 
-  The extesion can be set up by:
+  The extension can be set up by:
   1. `compile_commands.json`
       - More reliable
-      - Aderent to the project configuration
+      - Adherent to the project configuration
 
 <details>
 <summary> Generating compile_commands </summary>
@@ -143,7 +146,7 @@ If you have many projects in your solution, the script [merge_compile_commands.p
 
 ### [C++ Set next statement](https://marketplace.visualstudio.com/items?itemName=ntoskrnl7.cxx-set-next-statement-extension)
 
-  Debug super powers: Can jump the debbuger to a different line.
+  Debug super powers: Can jump the debugger to a different line.
 
 ## Project management
 
@@ -163,7 +166,7 @@ If you have many projects in your solution, the script [merge_compile_commands.p
 
 ### [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
 
-  The usual visualizer for the git branches. It's quite usefull for an overview of the git branches or for searching.
+  The usual visualizer for the git branches. It's quite useful for an overview of the git branches or for searching.
 
 ## Other
 
@@ -177,7 +180,7 @@ If you have many projects in your solution, the script [merge_compile_commands.p
 
 ### [Better Readability](https://marketplace.visualstudio.com/items?itemName=pinage404.better-readability-extension-pack)
 
-  Pack of extensions to improve readabillity. Will help bracket matching, colorize the indentation and mark text gremlins for example.
+  Pack of extensions to improve readability. Will help bracket matching, colorize the indentation and mark text gremlins for example.
 
 # Prototyping
 
@@ -332,9 +335,9 @@ Keybinding to build the current file: `ctrl+shift+b`
 
 ## Executing and debug
 
-This will allow you to execut and debug a file build with any of the tasks in the last item.
+This will allow you to execute and debug a file build with any of the tasks in the last item.
 
-As with the tasks, you'll need a `launch.json`, you can generate a default one eith the command: `Debug: open launch.json`.
+As with the tasks, you'll need a `launch.json`, you can generate a default one with the command: `Debug: open launch.json`.
 
 Add the configuration to the `"configurations": [...]` entry or use the [launch.json](launch.json) sample configuration.
 ```json
@@ -354,7 +357,7 @@ Add the configuration to the `"configurations": [...]` entry or use the [launch.
 # Building projects
 
 ## CMake
-  Using the [CMake](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools) extension it will setup the building enviroment for you.
+  Using the [CMake](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools) extension it will setup the building environment for you.
 
 ## MSBuild
   MSBuild is a different thing, you may have to do some tweaking when building bigger projects but here is the basics:

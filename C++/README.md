@@ -24,13 +24,13 @@
 
 ## Clang tidy
 
-  `Clang-tidy` is tool in the `clang` suite for checking the code. It checks static issues, bug-prone styles and patterns. There are thousands of possible check, start with this sugested list of checks and modify as needed.
+  `Clang-tidy` is tool in the `clang` suite for checking the code. It checks static issues, bug-prone styles and patterns. There are thousands of possible check, start with this suggested list of checks and modify as needed.
   ```
   -checks=-*,bugprone-*,cert-*, clang-*,cppcoreguidelines-*,llvm-*,misc-*,modernize-*,performance-*,readability-*,-modernize-use-trailing-return-type
   ```
 
 ### Clang tidy diff
-  The [clang-tidy-diff.py](clang-tidy-diff.py) allow `clang-tidy` to be applied only to modified files and lines. This allows a team to use `clang-tidy` in large codebases and still only get meaningfull errors for the newly modified code.
+  The [clang-tidy-diff.py](clang-tidy-diff.py) allow `clang-tidy` to be applied only to modified files and lines. This allows a team to use `clang-tidy` in large codebases and still only get meaningful errors for the newly modified code.
 
    Sample command:
 ```bash
@@ -41,11 +41,11 @@ git diff -U0 HEAD^ | clang-tidy-diff.py -strip 1 -- -checks=-*,modernize-use-ove
 
 ## Clang format
 
-  The `clang-format` tool is a higly configurable tool for formatting `C++` code. It's very stable and will (probably) not break your code if it was not already broken.
+  The `clang-format` tool is a highly configurable tool for formatting `C++` code. It's very stable and will (probably) not break your code if it was not already broken.
 
   A configuration file can be generated with a preview in [clang-format-configurator](https://zed0.co.uk/clang-format-configurator/).
 
-  `Visual Studio` suports `clang-format` by default.
+  `Visual Studio` supports `clang-format` by default.
 
 ### Clang format diff
 
