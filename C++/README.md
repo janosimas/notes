@@ -18,26 +18,26 @@
 
 ## CppCheck
 
-  The [Cppcheck](http://cppcheck.sourceforge.net/) is a static analysis tool the get many of the most common bugs like usage of an uninitialized variable. It has a `GUI` and can be integrated with most editors and `IDE` with extensions.
+  The [Cppcheck](http://cppcheck.sourceforge.net/) is a static analysis tool that identifies many of the most common bugs like usage of an uninitialized variable. It has a `GUI` and can be integrated with most editors and `IDE` with extensions.
 
-  Does not depend on your build system.
+  It does not depend on your build system.
 
-## Clang tidy
+## Clang-tidy
 
   `Clang-tidy` is tool in the `clang` suite for checking the code. It checks static issues, bug-prone styles and patterns. There are thousands of possible check, start with this suggested list of checks and modify as needed.
   ```
   -checks=-*,bugprone-*,cert-*, clang-*,cppcoreguidelines-*,llvm-*,misc-*,modernize-*,performance-*,readability-*,-modernize-use-trailing-return-type
   ```
 
-### Clang tidy diff
-  The [clang-tidy-diff.py](clang-tidy-diff.py) allow `clang-tidy` to be applied only to modified files and lines. This allows a team to use `clang-tidy` in large codebases and still only get meaningful errors for the newly modified code.
+### Clang-tidy-diff
+  The [clang-tidy-diff.py](clang-tidy-diff.py) allows `clang-tidy` to be applied only to modified files and lines. This allows a team to use `clang-tidy` in large codebases and still only get meaningful errors for the newly modified code.
 
    Sample command:
 ```bash
 git diff -U0 HEAD^ | clang-tidy-diff.py -strip 1 -- -checks=-*,modernize-use-override
 ```
 
-  The `clang-tidy-diff.py` is a modified version of the official script that fix a few issues. This version allows one to pass arguments directly to `clang-tidy` using the '`--`' flag.
+  The `clang-tidy-diff.py` is a modified version of the official script that fixes a few issues. This version allows one to pass arguments directly to `clang-tidy` using the '`--`' flag.
 
 ## Clang format
 
@@ -49,7 +49,7 @@ git diff -U0 HEAD^ | clang-tidy-diff.py -strip 1 -- -checks=-*,modernize-use-ove
 
 ### Clang format diff
 
-  This script allow `clang-format` to be applied only in the modified area of the code. This allows a team to use `clang-format` in large codebases and still only commit formatted code.
+  This script allows `clang-format` to be applied only in the modified area of the code. This allows a team to use `clang-format` in large codebases and still only commit formatted code.
 
 ```bash
 git diff -U0 --no-color HEAD^ | clang-format-diff.py -p1 -i
