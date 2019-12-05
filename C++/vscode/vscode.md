@@ -20,7 +20,7 @@
 
 # Installation
 
-  [**VSCode**](https://code.visualstudio.com/download) can be installed in 3 different ways:
+  You can install [**VSCode**](https://code.visualstudio.com/download) in 3 different ways:
 
   - User folder (recommended by **Microsoft**)
   - System wide
@@ -34,7 +34,7 @@
 
 # Requirements
 
-  The [MS C++](#c--) extension is a requirement for the proper usage. Some of its functionalities can be replaced by other extensions, I recommend installing it.
+  The [MS C++](#c--) extension is a requirement for proper usage. You can replace some of its functionalities with other extensions but I recommend installing it.
 
 # Extensions
 
@@ -47,7 +47,7 @@
 
   You should create a configuration file with the `C\C++: Edit configurations` command. For more information about the configuration check the official [documentation](https://code.visualstudio.com/docs/cpp/config-msvc).
 
-  In **Windows** you may also need to configure the `CL` compiler path for different architectures.
+  In **Windows**, you may also need to configure the `CL` compiler path for different architectures.
 
 ### [Clangd (LLVM)](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd)
 
@@ -114,9 +114,9 @@ If you have many projects in your solution, the script [merge_compile_commands.p
 
   Flylint (C/C++ Advanced Lint) is an extension that integrates other tools in your `VSCode` to provide code analysis.
 
-  It can be integrated with `clang` and `cppcheck` with minimum effort.
+  Its integration with `clang` and `cppcheck` is set up minimum effort.
 
-  The `clang` option should be disabled if your are using other `clang-based  extension like `clangd`
+  One should disable the `clang` option when using another `clang-based` extension like `clangd`
 
 <details>
 <summary> Sample configuration </summary>
@@ -152,7 +152,7 @@ If you have many projects in your solution, the script [merge_compile_commands.p
 
 ### [CMake](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools)
 
-  The **CMake** extension is very mature and full featured. Automatic recognizes *CMakeList* files and configure the project.
+  The **CMake** extension is very mature and full-featured. Automatic recognizes *CMakeList* files and configure the project.
 
 ### [Solution explorer](https://marketplace.visualstudio.com/items?itemName=fernandoescolar.vscode-solution-explorer)
 
@@ -162,7 +162,7 @@ If you have many projects in your solution, the script [merge_compile_commands.p
 
 ### [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
 
-  Git super powers. Has more features than most git gui. In line blame, line history, search, you name it. More options than you can manage but don't worry, it works very well with the defaults.
+  Git super powers. It has more features than most git GUI. In line blame, line history, search, you name it. More options than you can manage but don't worry, it works very well with the defaults.
 
 ### [Git Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph)
 
@@ -176,7 +176,7 @@ If you have many projects in your solution, the script [merge_compile_commands.p
 
 ### [Auto Comment Blocks](https://marketplace.visualstudio.com/items?itemName=kevinkyang.auto-comment-blocks)
 
-  Minor improvement for writing documentation blocks, will auto insert '*' when you break a line.
+  Minor improvement for writing documentation blocks. It will auto-insert '*' when you break a line.
 
 ### [Better Readability](https://marketplace.visualstudio.com/items?itemName=pinage404.better-readability-extension-pack)
 
@@ -194,11 +194,11 @@ If you have many projects in your solution, the script [merge_compile_commands.p
 ## Building
   These tasks allow you to build the current file with the desired compiler.
 
-  To use these tasks you need to alter the `tasks.json`, if you don't have one it can be created with the `Configure task` command in `VSCode` and add them as needed to your `tasks.json` in the `"tasks": [...]` entry.
+  To use these tasks you need to alter the `tasks.json`. You can create a fresh one with the `Configure task` command in `VSCode`. Add the tasks you need to your `tasks.json` in the `"tasks": [...]` entry.
 
   Another option is to copy the sample file with all the tasks: [tasks.json](tasks.json)
 
-  The binaries will be create in the `build/` folder.
+  The binaries will be created in the `build/` folder.
 
   The `create-build-folder` task is required by the other tasks and is called automatically:
 ```json
@@ -360,7 +360,7 @@ Add the configuration to the `"configurations": [...]` entry or use the [launch.
   Using the [CMake](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools) extension it will setup the building environment for you.
 
 ## MSBuild
-  MSBuild is a different thing, you may have to do some tweaking when building bigger projects but here is the basics:
+  MSBuild is a different thing, you may have to do some tweaking when building bigger projects but here are the basics:
 
 ```json
 {
