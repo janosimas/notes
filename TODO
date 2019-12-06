@@ -1,0 +1,10 @@
+- precomit script
+	- cppcheck : http://cppcheck.sourceforge.net/forum/viewtopic.php?f=4&t=519
+	- clang-tidy-diff
+
+- docker
+	- tips
+	- Dev enviroment
+
+- toolchain and minimal configuration
+	- bootstrap?

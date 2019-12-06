@@ -5,7 +5,4 @@ Feel free to copy, use and alter.
 
 ## [C++](C++/README.md)
 
-## TODO:
-  - precomit script
-  - docker
-  - toolchain and minimal configuration
+*I started with c++ but I plan to expand the topics*
