@@ -1,4 +1,5 @@
 # C++
+  * [Usefull tricks](#usefull-tricks)
   * [Refactoring](#refactoring)
   * [Text editor (VSCode)](#text-editor-vscode)
   * [CppCheck](#cppcheck)
@@ -7,6 +8,24 @@
   * [Clang format](#clang-format)
     + [Clang-format-diff](#clang-format-diff)
   * [Ubuntu](#ubuntu)
+
+## Usefull tricks
+
+### How to find the size of a structure during programming in visual studio
+
+
+If you hover over foo, it will show `4Ui64` - the size of x is 4. The Ui64 suffix is because size_t is Unsigned, Integral and 64 bits. Since it uses Intellisense, you don't need to compile the code. You can put `Sizer` in your precompiled header.
+
+```cpp
+template <size_t S> class Sizer{};
+int x;
+Sizer<sizeof(x)> foo;
+```
+
+Reference: https://stackoverflow.com/a/24776469
+
+
+
 
 ## Refactoring
   Some tips for using regular expressions for refactoring can be found in [regex.md](regex.md).
