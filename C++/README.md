@@ -24,6 +24,59 @@ Sizer<sizeof(x)> foo;
 
 Reference: https://stackoverflow.com/a/24776469
 
+### Optional back inserter
+
+The interator helps address the composability issues of the standart library. In a case where you want to apply a filter and transform in a container, this would help not just the composability but also usage in non copiable values.
+
+```cpp
+template<class Container>
+struct optional_back_insert_iterator
+: public std::iterator< std::output_iterator_tag,
+void, void, void, void >
+{
+    explicit optional_back_insert_iterator( Container& c )
+    : container(std::addressof(c))
+    {}
+
+    using value_type = typename Container::value_type;
+
+    optional_back_insert_iterator<Container>&
+    operator=( const boost::optional<value_type> opt )
+    {
+        if (opt) {
+            container->push_back(std::move(opt.value()));
+        }
+        return *this;
+    }
+
+    optional_back_insert_iterator<Container>&
+    operator*() {
+        return *this;
+    }
+
+    optional_back_insert_iterator<Container>&
+    operator++() {
+        return *this;
+    }
+
+    optional_back_insert_iterator<Container>&
+    operator++(int) {
+        return *this;
+    }
+
+protected:
+    Container* container;
+};
+
+template<class Container>
+optional_back_insert_iterator<Container> optional_back_inserter(Container& container)
+{
+    return optional_back_insert_iterator<Container>(container);
+}
+```
+
+Reference: https://stackoverflow.com/a/34132758
+
 
 
 
