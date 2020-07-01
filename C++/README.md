@@ -77,8 +77,18 @@ optional_back_insert_iterator<Container> optional_back_inserter(Container& conta
 
 Reference: https://stackoverflow.com/a/34132758
 
+### value_type of a c-array
 
+When working with templated containers, sometimes we need the type of the element of the container. The usual way for standart containers is to use `Container::value_type`. The problem is that `C-array` does not have a `::value_type`.
 
+Some improvements can be found on the link.
+
+```cpp
+template<typename T>
+using element_type_t = std::remove_reference_t<decltype(*std::begin(std::declval<T&>()))>;
+```
+
+Reference: https://stackoverflow.com/a/44522730
 
 ## Refactoring
   Some tips for using regular expressions for refactoring can be found in [regex.md](regex.md).
