@@ -5,4 +5,6 @@ Feel free to copy, use and alter.
 
 ## [C++](C++/README.md)
 
+## [Rust](Rust/README.md)
+
 *I started with c++ but I plan to expand the topics*
