@@ -1,7 +1,13 @@
-# Rust
-  * [License](#license)
+# Table of contents
+- [Table of contents](#table-of-contents)
+- [Reference](#reference)
+- [License](#license)
 
-## License
+# Reference
+- [Cheats.rs](https://cheats.rs/)
+  - Easy to read and find cheat sheet for Rust
+
+# License
 
 These are some tools to help with the licenses of the libraries the project:
 - [cargo-license](https://crates.io/crates/cargo-license)
