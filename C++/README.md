@@ -4,6 +4,7 @@
   - [How to find the size of a structure during programming in visual studio](#how-to-find-the-size-of-a-structure-during-programming-in-visual-studio)
   - [Optional back inserter](#optional-back-inserter)
   - [value_type of a c-array](#value_type-of-a-c-array)
+  - [Benchmark execution time](#benchmark-execution-time)
 - [Refactoring](#refactoring)
 - [Text editor (VSCode)](#text-editor-vscode)
 - [CppCheck](#cppcheck)
@@ -93,6 +94,48 @@ using element_type_t = std::remove_reference_t<decltype(*std::begin(std::declval
 ```
 
 Reference: https://stackoverflow.com/a/44522730
+
+## Benchmark execution time
+
+This is a simple class just to time the execution of a piece of code.
+
+As it's RAII, creating an object and scoping the piece of code to be timed is enough.
+
+```cpp
+#include <chrono>
+#include <iostream>
+#include <string>
+#include <utility>
+
+
+class Benchmark
+{
+  public:
+    explicit Benchmark(std::string label)
+        : m_label(std::move(label))
+    {
+    }
+
+    ~Benchmark()
+    {
+        m_end = std::chrono::high_resolution_clock::now();
+        m_elapsed = m_end - m_start;
+
+        std::cout << m_label << " : " << m_elapsed.count() << " s\n";
+    }
+
+    Benchmark(Benchmark&&) = delete;
+    Benchmark(const Benchmark&) = delete;
+    Benchmark& operator=(Benchmark&&) = delete;
+    Benchmark& operator=(const Benchmark&) = delete;
+
+  private:
+    std::string m_label;
+    std::chrono::steady_clock::time_point m_start = std::chrono::high_resolution_clock::now();
+    std::chrono::steady_clock::time_point m_end{};
+    std::chrono::duration<double> m_elapsed{};
+};
+```
 
 # Refactoring
   Some tips for using regular expressions for refactoring can be found in [regex.md](regex.md).
