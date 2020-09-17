@@ -1,21 +1,41 @@
 # VSCode for C++ prototyping
 
+- [VSCode for C++ prototyping](#vscode-for-c-prototyping)
 - [Installation](#installation)
 - [Requirements](#requirements)
 - [Extensions](#extensions)
-  * [C++](#c--)
-  * [Debug](#debug)
-  * [Project management](#project-management)
-  * [Git](#git)
-  * [Other](#other)
+  - [C++](#c)
+    - [C/C++ (Microsoft)](#cc-microsoft)
+    - [Clangd (LLVM)](#clangd-llvm)
+      - [CMake](#cmake)
+      - [Visual Studio](#visual-studio)
+    - [Flylint](#flylint)
+    - [Code Runner](#code-runner)
+  - [Debug](#debug)
+    - [C++ Set next statement](#c-set-next-statement)
+  - [Project management](#project-management)
+    - [CMake](#cmake-1)
+    - [Solution explorer](#solution-explorer)
+  - [Git](#git)
+    - [GitLens](#gitlens)
+    - [Git Graph](#git-graph)
+  - [Other](#other)
+    - [Doxygen Documentation Generator](#doxygen-documentation-generator)
+    - [Auto Comment Blocks](#auto-comment-blocks)
+    - [Better Readability](#better-readability)
 - [Prototyping](#prototyping)
-  * [Building](#building)
-    + [MSVC C++17](#msvc-c17)
-    + [MSVC C++03](#msvc-c03)
-    + [Clang C++17](#clang-c17)
-    + [Clang C++03](#clang-c03)
-  * [Executing and debug](#executing-and-debug)
+  - [Building](#building)
+    - [MSVC C++17](#msvc-c17)
+    - [MSVC C++03](#msvc-c03)
+    - [Clang C++17](#clang-c17)
+    - [Clang C++03](#clang-c03)
+  - [Executing and debug](#executing-and-debug)
 - [Building projects](#building-projects)
+  - [CMake](#cmake-2)
+  - [MSBuild](#msbuild)
+  - [Visual Studio DevShell](#visual-studio-devshell)
+    - [PowerShell](#powershell)
+    - [CMD](#cmd)
 
 
 # Installation
@@ -408,3 +428,32 @@ Add the configuration to the `"configurations": [...]` entry or use the [launch.
     ]
 }
 ```
+
+## Visual Studio DevShell
+
+These settings will set the integrated terminal as a `Developer prompt`.
+
+It will make to available in the `path` the developer tools from `Visual Studio` and set the environment variables like Microsoft libraries path (`MFC`, `ATL`,...).
+
+### PowerShell
+```json
+"terminal.integrated.shellArgs.windows": [
+  "-noe",
+  "-c",
+  "Import-Module",
+  "\"C:/Program Files (x86)/Microsoft Visual Studio/2019/Preview/Common7/Tools/Microsoft.VisualStudio.DevShell.dll\";",
+  "Enter-VsDevShell",
+  "9685e16d"
+],
+```
+
+### CMD
+```json
+"terminal.integrated.shellArgs.windows": [
+  "/K",
+  "C:/Program Files (x86)/Microsoft Visual Studio/2019/Preview/Common7/Tools/VsDevCmd.bat"
+]
+```
+
+
+
