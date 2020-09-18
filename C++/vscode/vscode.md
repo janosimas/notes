@@ -443,7 +443,9 @@ It will make to available in the `path` the developer tools from `Visual Studio`
   "Import-Module",
   "\"C:/Program Files (x86)/Microsoft Visual Studio/2019/Preview/Common7/Tools/Microsoft.VisualStudio.DevShell.dll\";",
   "Enter-VsDevShell",
-  "9685e16d"
+  "9685e16d;",
+  "Set-Location",
+  "${workspaceFolder}"
 ],
 ```
 
