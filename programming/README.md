@@ -5,6 +5,7 @@
 - [Learning resources](#learning-resources)
 - [Git](#git)
   - [Remove whitespace changes](#remove-whitespace-changes)
+- [Decompose Hex flags](#decompose-hex-flags)
 
 # Intro
 
@@ -40,3 +41,18 @@ git diff -U0 -w --no-color | git apply --cached --ignore-whitespace --unidiff-ze
 ```
 
 Reference: https://stackoverflow.com/a/45486981/1331436
+
+# Decompose Hex flags
+
+This is a python function to decompose a decimal number in a list of hex-flags:
+```py
+def hex_decompose(flag):
+   b = bin(flag)[2:]
+   for i in range(len(b)):
+       if int(b[i]):
+           x = len(b) - i - 1
+           y = '1' + ('0' * x)
+           print(hex(int(y,2)))
+```
+
+Reference: https://gist.github.com/earonesty/1023c9de69aa5ae02d83fe3baf4dd753
