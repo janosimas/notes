@@ -28,3 +28,12 @@ Explanation about the built-in traits, nice reminder to review from time to time
 Some of the information is outdated, read with care!
 
 https://llogiq.github.io/2015/07/30/traits.html
+
+# VSCode
+
+## Extension
+
+- [Rust-in-peace Extension Pack](https://marketplace.visualstudio.com/items?itemName=gilescope.rust-in-peace)
+
+  This will bring all the required extensions for most use cases.
+    - For large projects, set `-j4` (or less) for `cargo check`. This will avoid freezing your system.
