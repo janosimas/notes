@@ -56,3 +56,11 @@ def hex_decompose(flag):
 ```
 
 Reference: https://gist.github.com/earonesty/1023c9de69aa5ae02d83fe3baf4dd753
+
+# Find folders containing some file
+
+```bash
+find . -type f -name 'pattern' | sed -r 's|/[^/]+$||' | sort | uniq
+```
+Reference: https://unix.stackexchange.com/a/111951
+
