@@ -4,6 +4,8 @@
 - [License](#license)
 - [Traits](#traits)
   - [Rust's Built-in Traits, the When, How & Why](#rusts-built-in-traits-the-when-how--why)
+- [VSCode](#vscode)
+  - [Extension](#extension)
 
 # Reference
 - [Cheats.rs](https://cheats.rs/)
@@ -37,3 +39,12 @@ https://llogiq.github.io/2015/07/30/traits.html
 
   This will bring all the required extensions for most use cases.
     - For large projects, set `-j4` (or less) for `cargo check`. This will avoid freezing your system.
+
+- [Rusty One Dark](https://marketplace.visualstudio.com/items?itemName=Jeraldson.vscode-rusty-onedark)
+
+  Optimized dark theme
+
+- [Cargo Toml snippets](https://marketplace.visualstudio.com/items?itemName=kevinkassimo.cargo-toml-snippets)
+
+  Toml snippets
+
