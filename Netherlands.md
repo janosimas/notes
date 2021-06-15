@@ -103,15 +103,17 @@ Websites to look at:
 
 ## Health insurance
 
+You are obligated by law to contract a basic package health insurance. The basic package contains the minimum coverage all health insurance providers must offer. It's regulated by the national government and covers basic health needs like family doctor appointments, prescription medications (some, not all), emergency and exams and follow ups with a specialist.
+
+Some health providers choose to offer more services and coverage in their basic packages. The price also changes slightly from provider to provider.
+
+You have to pay special attention to extensions of the basic plan. For example, physical therapy and dental care.
+
 This link has some good general information about health insurance: https://www.iamexpat.nl/expat-info/insurances-netherlands/dutch-health-insurance
 
-The basic health insurance is always the same, you don't have to worry much about that.
+**IMPORTANT:**  So some research is important to get what fits you best. You may only change health insurance by the end of the year! This applies to the insurer and to the insurance plan.
 
-You have to pay attention to the extras. For example, physical therapy and dental care.
-
-**IMPORTANT:** You may only change health insurance by the end of the year! This applies to the insurer and to the insurance plan.
-
-Here are two comparison websites for health insurance, they have different lists of services so you should check both to compare. After you find an insurance that you like, I suggest you go to their insurer website. The comparison website information is not always clear and may miss some information.
+Here are two comparison websites for health insurance, they have different lists of services so you should check both to compare. After you find an insurance that you like, I suggest you go to the insurer website. The comparison website information is not always clear and may be missing some information.
 
 - https://www.independer.nl/
 
@@ -223,3 +225,4 @@ There are many tax advisors available.
 # Contributors
 
 - Alexander Heuts
+- Fábio Franco
