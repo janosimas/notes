@@ -7,6 +7,7 @@
   - [Finding a place](#finding-a-place)
   - [Health insurance](#health-insurance)
     - [Doctors](#doctors)
+    - [Emergencies outside of office hours](#emergencies-outside-of-office-hours)
   - [Bank](#bank)
     - [Europe](#europe)
     - [Netherlands](#netherlands)
@@ -123,11 +124,23 @@ Insurance brokers may provide translations and have special benefits when hiring
 
 ### Doctors
 
-You'll have a "personal" general practitioner. As soon as you rent a place and have health insurance you should check in your region for a **huisarts**.
+You'll have a "personal" general practitioner. As soon as you rent a place and have health insurance you should check in your region for a *huisarts*. You can use a website such as https://www.kiesuwhuisarts.nl to find a GP close to you.
 
- In case you need some specialized treatment you'll need a request from your general practitioner. There are some exceptions but this is the baseline.
+Always make an appointment with your own GP. In case they are not available (e.g. vacation) they will have replacements. Going to a GP that's not your own is only possible in case of acute situations and you will have to pay for the appointment (but it can be reimbursed by your Health Insurance afterwards).
 
-Without a request, your health insurance may not agree in paying for the appointment.
+What to expect of a visit:
+
+- A normal appointment is about 10 minutes. Depending on the GP they may or may not be strict about this. Once you have established some rapport with the GP these 10 minutes might be fine, but you can ask for a double appointment if you are new with your GP or just want to establish more context.
+
+- Think about what you want from your GP. You don't have to self-diagnose, but come with concrete questions, not just a list of ailments. Your GP will ask you what you want from them.
+
+In case you need some specialized treatment or diagnosis you'll need a referral from your general practitioner. There are some exceptions but this is the baseline. Without a request your health insurance may not agree in paying for the appointment.
+
+### Emergencies outside of office hours
+
+If you ever need a GP outside of their office hours you can call a *huisartsenpost*. These are usually located at the Emergency Room of the closest hospital. They have a general phone number and you'll have to see which one is closest to you. They'll do an extensive triage via phone and will determine when you can go. Don't go without an appointment.
+
+Should you have a situation that requires immediate help you should call **112** and not the *huisartsenpost*.
 
 ## Bank
 
