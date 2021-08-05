@@ -6,6 +6,7 @@
   - [Rust's Built-in Traits, the When, How & Why](#rusts-built-in-traits-the-when-how--why)
 - [VSCode](#vscode)
   - [Extension](#extension)
+  - [Debugging tests](#debugging-tests)
 
 # Reference
 - [Cheats.rs](https://cheats.rs/)
@@ -48,3 +49,36 @@ https://llogiq.github.io/2015/07/30/traits.html
 
   Toml snippets
 
+## Debugging tests
+
+There are cases where the extensions don't work well with the tests, testing with features and workspaces are some of the cases.
+
+For this kind of situation a configuration can be added to `launch.json`.
+
+Replace the `<libname>` or remove the filter section for simple cases.
+
+Features may be added to the `args` section.
+
+For debugging only some specific tests, add the match-filter to the last `args` section.
+
+```json
+{
+    "type": "lldb",
+    "request": "launch",
+    "name": "Debug specific test",
+    "cargo": {
+        "args": [
+            "test",
+            "--no-run",
+        ],
+        "filter": {
+            "name": "<libname>",
+            "kind": "lib"
+        }
+    },
+    "args": ["<test filter>"],
+    "cwd": "${workspaceFolder}"
+},
+```
+
+Reference: https://github.com/vadimcn/vscode-lldb/issues/35
