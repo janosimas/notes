@@ -5,6 +5,8 @@
 - [Learning resources](#learning-resources)
 - [Git](#git)
   - [Remove whitespace changes](#remove-whitespace-changes)
+  - [Delete merged local branches](#delete-merged-local-branches)
+  - [List conflicting files](#list-conflicting-files)
 - [Decompose Hex flags](#decompose-hex-flags)
 - [Find folders containing some file](#find-folders-containing-some-file)
 - [Safer bash scripts](#safer-bash-scripts)
@@ -43,6 +45,28 @@ git diff -U0 -w --no-color | git apply --cached --ignore-whitespace --unidiff-ze
 ```
 
 Reference: https://stackoverflow.com/a/45486981/1331436
+
+## Delete merged local branches
+
+```
+[alias]
+  cleanup = "!git branch --merged | grep -v -P '^\\*|master|main|develop' | xargs -n1 -r git branch -d"
+```
+
+Reference: https://stackoverflow.com/a/21857717/1331436
+
+## List conflicting files
+
+```
+git diff --name-only --diff-filter=U
+```
+
+Create alias for `git conflicts`:
+```
+git config --global alias.conflicts "diff --name-only --diff-filter=U"
+```
+
+Reference: https://stackoverflow.com/a/10874862
 
 # Decompose Hex flags
 
