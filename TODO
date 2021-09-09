@@ -5,6 +5,10 @@
 - docker
 	- tips
 	- Dev environment
+	- docker run --rm -it -v $(pwd):/usr/src/project gcc:4.9
 
 - tool-chain and minimal configuration
 	- bootstrap?
+
+- Create cheatsheet for commands here?
+	- https://github.com/denisidoro/navi
