@@ -7,6 +7,10 @@
 - [VSCode](#vscode)
   - [Extension](#extension)
   - [Debugging tests](#debugging-tests)
+- [Prelude](#prelude)
+  - [Result](#result)
+  - [User agent name](#user-agent-name)
+  - [Common derive](#common-derive)
 
 # Reference
 - [Cheats.rs](https://cheats.rs/)
@@ -82,3 +86,32 @@ For debugging only some specific tests, add the match-filter to the last `args` 
 ```
 
 Reference: https://github.com/vadimcn/vscode-lldb/issues/35
+
+# Prelude
+
+Here are some starting structures I like to use in a new project.
+
+## Result
+
+I like to have a local `Result` type, it's less to write and easier to refactor.
+
+The ideal is to have also your own local `Error` type but I usually start with a boxed error and refactor later.
+
+```rust
+type Result<T> = std::result::Result<T, Box<dyn std::error::Error>>;
+```
+
+## User agent name
+
+Good to set when making network or database queries:
+```rust
+pub const APP_USER_AGENT: &str = concat!(env!("CARGO_PKG_NAME"), "/", env!("CARGO_PKG_VERSION"));
+```
+
+## Common derive
+
+These are some derive types that I need more often then not:
+```rust
+#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
+```
