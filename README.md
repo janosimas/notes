@@ -9,4 +9,6 @@ Feel free to copy, use and alter.
 
 # [Programming](programming/README.md)
 
+# [Linux](Linux.md)
+
 # [Moving to the Netherlands](Netherlands.md)

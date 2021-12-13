@@ -8,8 +8,6 @@
   - [Delete merged local branches](#delete-merged-local-branches)
   - [List conflicting files](#list-conflicting-files)
 - [Decompose Hex flags](#decompose-hex-flags)
-- [Find folders containing some file](#find-folders-containing-some-file)
-- [Safer bash scripts](#safer-bash-scripts)
 
 # Intro
 
@@ -81,18 +79,3 @@ def hex_decompose(flag):
            print(hex(int(y,2)))
 ```
 Reference: https://gist.github.com/earonesty/1023c9de69aa5ae02d83fe3baf4dd753
-
-# Find folders containing some file
-
-```bash
-find . -type f -name 'pattern' | sed -r 's|/[^/]+$||' | sort | uniq
-```
-Reference: https://unix.stackexchange.com/a/111951
-
-# Safer bash scripts
-
-Settings for early exit on failure:
-```bash
-set -Eeuxo pipefail
-```
-Reference: https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/
