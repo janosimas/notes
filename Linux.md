@@ -6,6 +6,7 @@
   - [cat](#cat)
   - [find](#find)
   - [finder (grep, history, files)](#finder-grep-history-files)
+  - [Cheat sheet](#cheat-sheet)
 - [Pipewire audio driver](#pipewire-audio-driver)
 - [Find folders containing some file](#find-folders-containing-some-file)
 - [Safer bash scripts](#safer-bash-scripts)
@@ -28,6 +29,10 @@
 ## finder (grep, history, files)
 
 [fzf](https://github.com/junegunn/fzf) and [skim](https://github.com/lotabout/skim): General purpose finder. Minimal differences, check comparison for the current state
+
+## Cheat sheet
+
+[navi](https://github.com/denisidoro/navi): Easy to find cheat sheet. Configurable and dynamic on the parameters.
 
 # Pipewire audio driver
 
