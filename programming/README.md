@@ -4,6 +4,7 @@
 - [Tools](#tools)
 - [Learning resources](#learning-resources)
 - [Git](#git)
+  - [Dependent branches](#dependent-branches)
   - [Remove whitespace changes](#remove-whitespace-changes)
   - [Delete merged local branches](#delete-merged-local-branches)
   - [List conflicting files](#list-conflicting-files)
@@ -31,6 +32,21 @@ This is not a list learning resources as they get outdated very fast, but here a
 # Git
 
 A few useful tips for using `git`.
+
+## Dependent branches
+
+When updating a branch that depends a series of branches (`main` -> `A` -> `B` -> `C`).
+
+To avoid conflicts with changes in the parent branch:
+- Reset the branch to the immediately dependent branch.
+- Re-commit the changes
+
+A soft reset will keep the changes and reset the commit history, avoiding conflicts.
+
+```
+git checkout C
+git reset B
+```
 
 ## Remove whitespace changes
 
