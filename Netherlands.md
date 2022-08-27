@@ -5,6 +5,8 @@
     - [Online store](#online-store)
   - [Language](#language)
   - [Finding a place](#finding-a-place)
+    - [Extra info about neighborhoods](#extra-info-about-neighborhoods)
+    - [Automatic searching for a place](#automatic-searching-for-a-place)
   - [Health insurance](#health-insurance)
     - [Doctors](#doctors)
     - [Emergencies outside of office hours](#emergencies-outside-of-office-hours)
@@ -101,6 +103,19 @@ Websites to look at:
 - https://huurwoningen.nl
 
 **IMPORTANT:** Be careful with scams.
+
+### Extra info about neighborhoods
+
+Browser extension to add more information about the neighborhoods to **Funda**
+
+https://github.com/nikitaindik/funda-neighbourhoods
+
+### Automatic searching for a place
+
+This project checks for new houses and sends a text message so you can be one of the first applicants.
+
+https://javascript.plainenglish.io/using-node-js-and-github-action-to-find-a-house-on-the-web-ae03ed64670a
+
 
 ## Health insurance
 
