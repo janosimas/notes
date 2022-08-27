@@ -11,6 +11,7 @@
   - [Result](#result)
   - [User agent name](#user-agent-name)
   - [Common derive](#common-derive)
+  - [Typed id](#typed-id)
 
 # Reference
 - [Cheats.rs](https://cheats.rs/)
@@ -115,3 +116,18 @@ These are some derive types that I need more often then not:
 #[derive(Debug, Clone, PartialEq)]
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
 ```
+
+## Typed id
+
+Strong typed generic id: [typed_id.rs](typed_id.rs)
+
+- Type safe
+- Implements `Deref` and other common traits of the underling type
+- Same size as the undeling type
+
+```rust
+struct User;
+type UserId = TypedId<u32, User>;
+```
+
+
